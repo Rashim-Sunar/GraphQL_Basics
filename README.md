@@ -53,7 +53,7 @@ GRAPHQL-PRO/
 
 ### 1️⃣ Clone Repository
 ```sh
-git clone https://github.com/your-username/graphql-pro.git
+git clone https://github.com/Rashim-Sunar/GraphQL_Basics.git
 cd graphql-pro
 ```
 
