@@ -1,0 +1,130 @@
+# 🚀 GraphQL CRUD API (Node.js + Express + Apollo Server + MongoDB)
+
+A clean and modular **GraphQL API** built with:
+
+- **Node.js + Express**
+- **Apollo Server (GraphQL)**
+- **MongoDB + Mongoose**
+- **JWT Authentication Middleware**
+
+This project demonstrates GraphQL Queries, Mutations, Authentication, and CRUD operations.
+
+---
+
+## 📁 Project Folder Structure
+
+GRAPHQL-PRO/
+│── node_modules/
+│── src/
+│ ├── config/
+│ │ └── db.js
+│ ├── graphql/
+│ │ ├── resolvers/
+│ │ │ └── userResolver.js
+│ │ ├── typeDefs/
+│ │ │ └── userType.js
+│ │ └── schema.js
+│ ├── middleware/
+│ │ └── authMiddleware.js
+│ ├── models/
+│ │ └── User.js
+│ ├── utils/
+│ ├── app.js
+│ └── index.js
+│── .env
+│── package.json
+│── package-lock.json
+
+
+---
+
+## ✅ Features
+
+| Feature | Description |
+|--------|-------------|
+| User Registration | Creates new user + returns JWT token |
+| User Login | Authenticates user + returns JWT token |
+| Authentication Middleware | Protects resolvers using JWT |
+| CRUD Operations | Create / Read / Update / Delete User |
+| Modular Architecture | Clean separation of schema and resolvers |
+
+---
+
+## 🛠 Setup Instructions
+
+### 1️⃣ Clone Repository
+
+git clone https://github.com/your-username/graphql-pro.git
+cd graphql-pro
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Create .env file in project root
+npm start
+
+GraphQL Playground will be available at:
+
+👉 http://localhost:5000/graphql
+
+🧪 GraphQL API Usage
+
+Open Apollo Playground → Enter the following queries:
+✅ Register User
+mutation {
+  registerUser(name: "Rashim", email: "rashim@example.com", password: "pass123") {
+    token
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+
+✅ Login User
+mutation {
+  loginUser(email: "rashim@example.com", password: "pass123") {
+    token
+    user {
+      id
+      name
+      email
+    }
+  }
+}
+
+✅ Get All Users
+query {
+  users {
+    id
+    name
+    email
+  }
+}
+
+✅ Update User
+mutation {
+  updateUser(id: "USER_ID", name: "New Name") {
+    id
+    name
+    email
+  }
+}
+
+
+✅ Delete User
+mutation {
+  deleteUser(id: "USER_ID")
+}
+
+
+🔐 Authentication Header
+
+For secured actions (like fetching users), include JWT token in Headers:
+json
+{
+  "Authorization": "Bearer <your_token_here>"
+}
+
+
